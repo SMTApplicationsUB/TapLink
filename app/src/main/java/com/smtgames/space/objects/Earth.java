@@ -10,12 +10,12 @@ import com.smtgames.space.math.Vector3f;
 
 public class Earth extends GameObject {
 
-    private final float SIZE = 1.0f;
+    private final float SIZE = 0.5f;
 
     public float verticies[] = {
             -SIZE / 2.0f, -SIZE / 2.0f, 0.0f,
-            -SIZE / 2.0f, SIZE / 2.0f, 0.0f,
             SIZE / 2.0f, -SIZE / 2.0f, 0.0f,
+            -SIZE / 2.0f, SIZE / 2.0f, 0.0f,
             SIZE / 2.0f, SIZE / 2.0f, 0.0f
     };
 
@@ -24,6 +24,8 @@ public class Earth extends GameObject {
 
         gs = new GeometrySquare(verticies);
         vector = new Vector3f(0.0f, 0.0f, 0.0f);
+
+        vector.setX(-0.6f);
 
         shader = new Shader("shader/earth.vert", "shader/earth.frag");
         shaderProgram = shader.getShaderProgram();
@@ -62,7 +64,7 @@ public class Earth extends GameObject {
         GLES20.glUniform1i(samplerLoc, 0);
 
         //Matrix
-        Matrix.translateM(mvpMatrix, 0, vector.getX(), vector.getY(), vector.getZ());
+        Matrix.translateM(mvpMatrix, 0, -0.1f, vector.getY(), vector.getZ());
         GLES20.glUniformMatrix4fv(mMVPMatrixHandle, 1, false, mvpMatrix, 0);
 
         //Draw

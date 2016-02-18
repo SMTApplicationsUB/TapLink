@@ -13,10 +13,10 @@ public class GeometrySquare {
     public final int COORDS_PER_VERTEX = 3;
 
     public float texture[] = {
-            1.0f, 1.0f,
-            1.0f, 0.0f,
             0.0f, 1.0f,
             0.0f, 0.0f,
+            1.0f, 1.0f,
+            1.0f, 0.0f,
     };
 
     public short indices[] = {0, 1, 2, 1, 3, 2};

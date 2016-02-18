@@ -3,7 +3,6 @@ package com.smtgames.space.engine;
 import android.content.Context;
 
 import com.smtgames.space.gfx.ImageManager;
-import com.smtgames.space.objects.Block;
 import com.smtgames.space.objects.Earth;
 import com.smtgames.space.objects.GameObject;
 import com.smtgames.space.objects.Space;
@@ -27,8 +26,8 @@ public class Game {
     public void init() {
         im = new ImageManager(context);
 
-        objects.add(space = new Space(im));
-        objects.add(earth = new Earth(im, this));
+        objects.add(space = new Space(this));
+        objects.add(earth = new Earth(this));
     }
 
     public void update() {
@@ -45,13 +44,5 @@ public class Game {
 
     public ImageManager getIm() {
         return im;
-    }
-
-    public Space getSpace() {
-        return space;
-    }
-
-    public Earth getEarth() {
-        return earth;
     }
 }

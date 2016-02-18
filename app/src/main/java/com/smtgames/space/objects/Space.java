@@ -48,7 +48,7 @@ public class Space extends GameObject {
 
         //Texture
         GLES20.glActiveTexture(GLES20.GL_TEXTURE0);
-        GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, im.texEarth);
+        GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, im.texSpace);
 
         //Enable Vertex Array
         GLES20.glEnableVertexAttribArray(positionLoc);

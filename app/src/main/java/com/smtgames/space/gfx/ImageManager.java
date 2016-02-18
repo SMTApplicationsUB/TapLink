@@ -6,6 +6,8 @@ import android.graphics.BitmapFactory;
 import android.opengl.GLES20;
 import android.opengl.GLUtils;
 
+import com.smtgames.space.R;
+
 public class ImageManager {
 
     public int texAsteroid, texEarth, texMars, texMercury, texMoon, texSatellite, texSettingsIcon, texSettingsIconPressed, texSpace, texSun, texVenus;

@@ -12,13 +12,6 @@ public class GeometrySquare {
 
     public final int COORDS_PER_VERTEX = 3;
 
-    public float verticies[] = {
-            0.0f, 0.0f, 0.0f,
-            0.0f, 1.0f, 0.0f,
-            1.0f, 0.0f, 0.0f,
-            1.0f, 1.0f, 0.0f
-    };
-
     public float texture[] = {
             1.0f, 1.0f,
             1.0f, 0.0f,
@@ -28,16 +21,7 @@ public class GeometrySquare {
 
     public short indices[] = {0, 1, 2, 1, 3, 2};
 
-    public GeometrySquare() {
-        update();
-    }
-
-    public void setVerticies(float[] verticies) {
-        this.verticies = verticies;
-        update();
-    }
-
-    public void update() {
+    public GeometrySquare(float[] verticies) {
         ByteBuffer bb = ByteBuffer.allocateDirect(verticies.length * 4);
         bb.order(ByteOrder.nativeOrder());
         vertexBuffer = bb.asFloatBuffer();
